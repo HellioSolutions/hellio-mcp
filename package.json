@@ -1,0 +1,52 @@
+{
+  "name": "@hellio/mcp-server",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for the Hellio Messaging API (SMS, OTP, voice, lookup, email verification, USSD).",
+  "type": "module",
+  "bin": {
+    "hellio-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "homepage": "https://helliomessaging.com/docs/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HellioSolutions/hellio-mcp.git"
+  },
+  "bugs": {
+    "url": "https://helliomessaging.com/contact"
+  },
+  "author": "Hellio Solutions",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "inspect": "npm run build && npx @modelcontextprotocol/inspector node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "hellio",
+    "sms",
+    "otp",
+    "ussd"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

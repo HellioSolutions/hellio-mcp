@@ -171,7 +171,7 @@ export function registerUssdTools(server: McpServer, client: HellioClient): void
     {
       title: "Rent an extension",
       description:
-        "Spends real money from your dedicated USSD balance (separate from SMS credit). Rents a numeric extension on the shared short code, priced by digit length (shorter is premium). Requires the `ussd` scope.",
+        "Deducts from your USSD balance (separate from SMS credit and your main wallet). Rents a numeric extension on the shared short code, priced by digit length (shorter is premium). Requires the `ussd` scope.",
       inputSchema: {
         code: z.string().max(12).describe("Numeric extension, e.g. `100`."),
         app_id: z.string().uuid().nullish().describe("An app of yours to route this extension to."),

@@ -16,7 +16,7 @@ export function registerSmsTools(server: McpServer, client: HellioClient): void 
     {
       title: "Send an SMS campaign",
       description:
-        "Spends real money. Queues an SMS to one or many recipients from an approved sender ID. Cost is reserved from your wallet up front and a campaign reference is returned for tracking. A retry-safe idempotency key is attached automatically. Requires the `sms:send` scope.",
+        "Deducts from your wallet balance. Queues an SMS to one or many recipients from an approved sender ID. Cost is reserved from your wallet up front and a campaign reference is returned for tracking. A retry-safe idempotency key is attached automatically. Requires the `sms:send` scope.",
       inputSchema: {
         recipients,
         sender: z.string().max(11).describe("An approved sender ID (max 11 chars)."),

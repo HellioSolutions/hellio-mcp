@@ -14,8 +14,8 @@ import { registerUssdTools } from "./tools/ussd.js";
 
 const INSTRUCTIONS = `This server exposes the Hellio Messaging API (SMS, OTP, voice, HLR lookup, email verification, and USSD).
 
-Money and safety:
-- Tools whose description begins with "Spends real money" charge the account's wallet or USSD balance. Confirm intent with the user before calling them.
+Billing and safety:
+- Tools whose description begins with "Deducts from your" charge the account's wallet or USSD balance. Confirm intent with the user before calling them.
 - Call hellio_get_balance and hellio_get_pricing to estimate cost before bulk sends.
 - Send tools attach an idempotency key automatically, so a retried call will not double-charge.
 - Which tools succeed depends on the token's scopes; a 403/insufficient-scope error means the token lacks that ability.`;

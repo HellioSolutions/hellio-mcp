@@ -81,7 +81,7 @@ Read-only (safe to call freely):
 - `hellio_ussd_list_apps`, `hellio_ussd_list_extensions`
 - `hellio_ussd_list_sessions`, `hellio_ussd_get_session`
 
-Writes that spend money (each description begins with "Spends real money"):
+Writes that charge your account (each description begins with "Deducts from your"):
 
 - `hellio_send_sms`, `hellio_send_otp`, `hellio_send_voice`
 - `hellio_lookup_numbers`, `hellio_verify_email`
@@ -96,7 +96,7 @@ Other writes:
 
 ## Safety notes
 
-- Money-spending sends attach an `Idempotency-Key` automatically, so a retried tool call replays the original response instead of double-charging.
+- Billable sends attach an `Idempotency-Key` automatically, so a retried tool call replays the original response instead of double-charging.
 - Every tool carries MCP annotations (`readOnlyHint`, `destructiveHint`) so clients can gate or confirm the risky ones.
 - Which tools succeed depends on the token's scopes. A `403` or "insufficient scope" error means the token lacks that ability, not that the tool is broken.
 

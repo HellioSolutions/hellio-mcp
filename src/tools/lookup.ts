@@ -11,7 +11,7 @@ export function registerLookupTools(server: McpServer, client: HellioClient): vo
     {
       title: "Number (HLR) lookup",
       description:
-        "Spends real money. Queues a batch of HLR number lookups. Lookups run asynchronously; the response confirms how many numbers were accepted. Requires the `lookup` scope.",
+        "Deducts from your wallet balance. Queues a batch of HLR number lookups. Lookups run asynchronously; the response confirms how many numbers were accepted. Requires the `lookup` scope.",
       inputSchema: {
         numbers: z
           .union([z.array(z.string()), z.string()])

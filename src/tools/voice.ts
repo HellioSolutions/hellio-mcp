@@ -11,7 +11,7 @@ export function registerVoiceTools(server: McpServer, client: HellioClient): voi
     {
       title: "Send a voice broadcast",
       description:
-        "Spends real money. Queues a voice call to one or many recipients. Provide either `text` (synthesized to speech, with an optional `voice`) or `audio_url` (an audio file Hellio fetches). Billed per second of audio per recipient. A retry-safe idempotency key is attached automatically. Requires the `voice` scope.",
+        "Deducts from your wallet balance. Queues a voice call to one or many recipients. Provide either `text` (synthesized to speech, with an optional `voice`) or `audio_url` (an audio file Hellio fetches). Billed per second of audio per recipient. A retry-safe idempotency key is attached automatically. Requires the `voice` scope.",
       inputSchema: {
         recipients: z.array(z.string()).describe("Destination numbers."),
         text: z.string().optional().describe("Text to synthesize (alternative to audio_url)."),

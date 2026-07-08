@@ -11,7 +11,7 @@ export function registerOtpTools(server: McpServer, client: HellioClient): void 
     {
       title: "Send an OTP",
       description:
-        "Spends real money. Generates a one-time passcode and delivers it over SMS, voice or email. The returned `reference` is the uuid of the message it spawns, so you can track delivery with hellio_get_message. A retry-safe idempotency key is attached automatically. Requires the `otp` scope.",
+        "Deducts from your wallet balance. Generates a one-time passcode and delivers it over SMS, voice or email. The returned `reference` is the uuid of the message it spawns, so you can track delivery with hellio_get_message. A retry-safe idempotency key is attached automatically. Requires the `otp` scope.",
       inputSchema: {
         mobile_number: z.string().optional().describe("Destination number (for sms/voice)."),
         email: z.string().email().optional().describe("Destination email (for the email channel)."),

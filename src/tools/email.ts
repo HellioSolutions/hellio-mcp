@@ -11,7 +11,7 @@ export function registerEmailTools(server: McpServer, client: HellioClient): voi
     {
       title: "Verify email addresses",
       description:
-        "Spends real money. Checks one or more email addresses for deliverability (syntax, MX records, mailbox existence, disposable and role-account detection). Billed per address checked. Requires the `email:verify` scope.",
+        "Deducts from your wallet balance. Checks one or more email addresses for deliverability (syntax, MX records, mailbox existence, disposable and role-account detection). Billed per address checked. Requires the `email:verify` scope.",
       inputSchema: {
         emails: z.array(z.string().email()).min(1).describe("One or more email addresses."),
       },
